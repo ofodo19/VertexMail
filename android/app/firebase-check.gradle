@@ -1,0 +1,22 @@
+// Stops the build EARLY with a plain-English message if the Firebase file is
+// missing or belongs to a different app id. Without this the app would build
+// fine but notifications would silently never work.
+tasks.matching { it.name == 'preBuild' }.all { t ->
+    t.doFirst {
+        def f = file('google-services.json')
+        if (!f.exists() || f.length() == 0) {
+            throw new GradleException(
+                "\n\n>>> MISSING FILE: android/app/google-services.json\n" +
+                ">>> Download it from Firebase Console (Project settings > Your apps > Android app)\n" +
+                ">>> and put it inside the android/app folder, then build again.\n")
+        }
+        def json = new groovy.json.JsonSlurper().parse(f)
+        def wanted = project.android.defaultConfig.applicationId
+        def found = json.client.collect { it.client_info.android_client_info.package_name }
+        if (!found.contains(wanted)) {
+            throw new GradleException(
+                "\n\n>>> google-services.json is for " + found + " but this app is '" + wanted + "'.\n" +
+                ">>> In Firebase, add an Android app whose package name is exactly '" + wanted + "' and download its file again.\n")
+        }
+    }
+}

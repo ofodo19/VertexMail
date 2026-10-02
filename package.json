@@ -1,0 +1,20 @@
+{
+  "name": "vertex-mail-app",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Android app (Capacitor) for Vertex Mail with native FCM push notifications",
+  "scripts": {
+    "sync": "cap sync android"
+  },
+  "dependencies": {
+    "@capacitor/android": "^6.2.0",
+    "@capacitor/core": "^6.2.0",
+    "@capacitor/splash-screen": "^6.0.3",
+    "@capacitor/status-bar": "^6.0.2",
+    "@capacitor/push-notifications": "^6.0.3"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^6.2.0",
+    "typescript": "^5.5.4"
+  }
+}

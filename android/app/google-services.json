@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "301080168213",
+    "project_id": "vertex-mail-63454",
+    "storage_bucket": "vertex-mail-63454.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:301080168213:android:75fff51fecc6adf7850b1c",
+        "android_client_info": {
+          "package_name": "com.vertextech.mail"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsdT8FfjPjb_naMR8jvQfSkwCY74auKL4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
